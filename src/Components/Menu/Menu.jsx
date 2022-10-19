@@ -1,4 +1,4 @@
-// import estilos from "./Menu.module.css";
+import estilos from "./Menu.module.css";
 const Menu = () => {
   return (
     <nav>
