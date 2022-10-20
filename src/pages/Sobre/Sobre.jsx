@@ -4,36 +4,30 @@ const Sobre = () => {
     <section>
       <h2 className={estilos.titulo_secao}>Sobre nosso PetShop</h2>
 
-      <div className={estilos.sobre}>
-        {/* <article>
-          <h3>Missão</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            rerum libero minus eveniet pariatur incidunt voluptatibus laudantium
-            laboriosam nihil, iure, ad quaerat sint et velit magnam cupiditate
-            fugit? Praesentium, sint.
-          </p>
-        </article>
+      <div id="sobre">
+        <h3>Missão</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+          rerum libero minus eveniet pariatur incidunt voluptatibus laudantium
+          laboriosam nihil, iure, ad quaerat sint et velit magnam cupiditate
+          fugit? Praesentium, sint.
+        </p>
 
-        <article>
-          <h3>Visão</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            rerum libero minus eveniet pariatur incidunt voluptatibus laudantium
-            laboriosam nihil, iure, ad quaerat sint et velit magnam cupiditate
-            fugit? Praesentium, sint.
-          </p>
-        </article>
+        <h3>Visão</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+          rerum libero minus eveniet pariatur incidunt voluptatibus laudantium
+          laboriosam nihil, iure, ad quaerat sint et velit magnam cupiditate
+          fugit? Praesentium, sint.
+        </p>
 
-        <article>
-          <h3>Valores</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            rerum libero minus eveniet pariatur incidunt voluptatibus laudantium
-            laboriosam nihil, iure, ad quaerat sint et velit magnam cupiditate
-            fugit? Praesentium, sint.
-          </p>
-        </article> */}
+        <h3>Valores</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+          rerum libero minus eveniet pariatur incidunt voluptatibus laudantium
+          laboriosam nihil, iure, ad quaerat sint et velit magnam cupiditate
+          fugit? Praesentium, sint.
+        </p>
       </div>
     </section>
   );

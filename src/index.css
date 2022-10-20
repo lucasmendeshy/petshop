@@ -60,3 +60,12 @@ h2 {
   max-width: 1000px;
   margin: auto;
 }
+
+#sobre,
+#produtos,
+#contato {
+  width: 100%;
+  background-color: #f7f7f7;
+  box-shadow: var(--sombra-box);
+  padding: 1rem;
+}
