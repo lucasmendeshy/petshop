@@ -27,3 +27,7 @@ Telas a partir de X tamanho (min-width)
 ### Desktop First
 
 Telas a partir de X tamanho (max-width)
+
+## Adicionando a lib
+
+react-router-dom@5

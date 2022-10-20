@@ -3,7 +3,7 @@
   box-shadow: var(--sombra-box);
 }
 
-.topo h1 a {
+.topo h1 .a {
   text-decoration: none;
   color: var(--cor-primaria);
   background-color: var(--cor-primaria-fundo);
