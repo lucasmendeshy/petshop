@@ -28,6 +28,28 @@ Telas a partir de X tamanho (min-width)
 
 Telas a partir de X tamanho (max-width)
 
-## Adicionando a lib
+## Uso de rotas com a lib react-router-dom@5 (versão 5)
 
-react-router-dom@5
+### instalação
+
+`npm install react-router-dom@5`
+
+### App.jsx
+
+1.  Realizar a importação dos recursos da lib
+    `import { BrowserRouter, Route, Switch } from "react-router-dom";`
+
+2.  Envolver todo o conteúdo do App.jsx dentro do **BrowserRouter**
+
+3.  Cada componente que funciona como "página ou tela" deve estar dentro de um `<Route>`
+
+4.  Os `<Route>` devem estar dentro de um `<Switch>` para que aconteça a troca de componentes ao navegar.
+
+**Obs.:** não coloque nada além de `<Route>` no `<Switch>`
+
+### Menu.jsx
+
+1.  Importar o NavLink
+    `import { NavLink } from "react-router-dom";`
+
+2.  Substituir a tag `<a>` pelo `<NavLink>` e o atributo `href` por `to`
