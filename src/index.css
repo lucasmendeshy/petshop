@@ -61,7 +61,8 @@ h2 {
   margin: auto;
 }
 
-/* Estilos para área genérica do layout */
+/* Estilos para área genérica do layout. 
+Não precisamos mais porque agora vem do modulo da caixa.*/
 /* #sobre,
 #produtos,
 #contato,
