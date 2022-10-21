@@ -62,7 +62,7 @@ h2 {
 }
 
 /* Estilos para área genérica do layout */
-#sobre,
+/* #sobre,
 #produtos,
 #contato,
 #pagina404 {
@@ -70,4 +70,4 @@ h2 {
   background-color: #f7f7f7;
   box-shadow: var(--sombra-box);
   padding: 1rem;
-}
+} */
