@@ -61,9 +61,11 @@ h2 {
   margin: auto;
 }
 
+/* Estilos para área genérica do layout */
 #sobre,
 #produtos,
-#contato {
+#contato,
+#pagina404 {
   width: 100%;
   background-color: #f7f7f7;
   box-shadow: var(--sombra-box);

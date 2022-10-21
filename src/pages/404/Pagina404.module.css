@@ -1,0 +1,12 @@
+.titulo_secao::before {
+  content: "😱";
+  margin-right: 0.5rem;
+}
+
+.pagina404 {
+  text-align: center;
+}
+
+.imagem404 {
+  width: 50%;
+}
