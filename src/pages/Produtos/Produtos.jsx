@@ -1,10 +1,11 @@
+import Caixa from "../../Components/Caixa/Caixa";
 import estilos from "./Produtos.module.css";
 const Produtos = () => {
   return (
     <section>
       <h2 className={estilos.titulo_secao}>Conheças nossos produtos</h2>
 
-      <div id="produtos" className={estilos.produtos}>
+      <Caixa id="produtos" className={estilos.produtos}>
         <article>
           <h3>Produto 1</h3>
           <p>
@@ -34,7 +35,7 @@ const Produtos = () => {
             fugit? Praesentium, sint.
           </p>
         </article>
-      </div>
+      </Caixa>
     </section>
   );
 };
