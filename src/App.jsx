@@ -24,7 +24,7 @@ const App = () => {
               <Redirect to="/" />
             </Route>
 
-            <Route path="/posts">
+            <Route path="/posts/:id">
               <Post />
             </Route>
 

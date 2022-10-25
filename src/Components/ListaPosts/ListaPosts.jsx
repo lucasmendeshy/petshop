@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"; // Hooks do React
 import serverApi from "../../api/servidor-api";
 import LoadingDesenho from "../LoadingDesenho/LoadingDesenho.jsx";
 import estilos from "./ListaPosts.module.css";
-import pacman from "../../assets/images/pacman.svg";
 
 const ListaPosts = ({ titulo, subtitulo }) => {
   /* Iniciamos o state componente com um array vazio,
