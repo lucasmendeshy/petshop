@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"; // Hooks do React
 import serverApi from "../../api/servidor-api";
 import LoadingDesenho from "../LoadingDesenho/LoadingDesenho.jsx";
 import estilos from "./ListaPosts.module.css";
-
+import ArtigoPost from "../ArtigoPost/ArtigoPost";
 const ListaPosts = ({ titulo, subtitulo }) => {
   /* Iniciamos o state componente com um array vazio,
   para posteriormente "preechê-lo com os dados vindos da API.
@@ -41,11 +41,8 @@ const ListaPosts = ({ titulo, subtitulo }) => {
   return (
     <div className={estilos.lista_posts}>
       {posts.map(({ id, titulo, subtitulo }) => (
-        <article key={id} className={estilos.post}>
-          <h3>{titulo}</h3>
-
-          <p>{subtitulo}</p>
-        </article>
+        <ArtigoPost key={id} titulo={titulo} subtitulo={subtitulo} classe={estilos.post} />
+        
       ))}
     </div>
   );
