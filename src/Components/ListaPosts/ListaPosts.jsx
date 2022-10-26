@@ -41,8 +41,8 @@ const ListaPosts = ({ titulo, subtitulo }) => {
   return (
     <div className={estilos.lista_posts}>
       {posts.map(({ id, titulo, subtitulo }) => (
-        <ArtigoPost key={id} titulo={titulo} subtitulo={subtitulo} classe={estilos.post} />
-        
+        <ArtigoPost key={id} id={id} titulo={titulo} subtitulo={subtitulo} classe={estilos.post} />
+
       ))}
     </div>
   );
