@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react"; // Hooks do React
 import serverApi from "../../api/servidor-api";
+import LoadingDesenho from "../LoadingDesenho/LoadingDesenho.jsx";
 import estilos from "./ListaPosts.module.css";
+import pacman from "../../assets/images/pacman.svg";
+
 const ListaPosts = ({ titulo, subtitulo }) => {
   /* Iniciamos o state componente com um array vazio,
   para posteriormente "preechê-lo com os dados vindos da API.
   Esta atribuição será feita com auxílio do setPosts." */
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getPosts() {
@@ -13,6 +17,7 @@ const ListaPosts = ({ titulo, subtitulo }) => {
         const resposta = await fetch(`${serverApi}/posts`);
         const dados = await resposta.json();
         setPosts(dados);
+        setLoading(false);
       } catch (error) {
         console.log("Deu ruim! " + error.message);
       }
@@ -29,6 +34,10 @@ const ListaPosts = ({ titulo, subtitulo }) => {
   - Se não passar a lista (ou seja, se deixar sem os [], useEffect executará toda vez que o componente for redenrizado. Portanto, o callback se torna um loop infinito.)
   
   - Se passar a lista vazia (ou seja, deixar o [] vazio), useEffect executará somente no momento que o componente é renderizado a primeira vez evitando o loop infinito no callback.*/
+
+  if (loading) {
+    return <LoadingDesenho />;
+  }
 
   return (
     <div className={estilos.lista_posts}>
