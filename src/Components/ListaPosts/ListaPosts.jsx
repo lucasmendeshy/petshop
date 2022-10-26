@@ -3,7 +3,7 @@ import serverApi from "../../api/servidor-api";
 import LoadingDesenho from "../LoadingDesenho/LoadingDesenho.jsx";
 import estilos from "./ListaPosts.module.css";
 import ArtigoPost from "../ArtigoPost/ArtigoPost";
-const ListaPosts = ({ titulo, subtitulo }) => {
+const ListaPosts = () => {
   /* Iniciamos o state componente com um array vazio,
   para posteriormente "preechê-lo com os dados vindos da API.
   Esta atribuição será feita com auxílio do setPosts." */
@@ -41,8 +41,13 @@ const ListaPosts = ({ titulo, subtitulo }) => {
   return (
     <div className={estilos.lista_posts}>
       {posts.map(({ id, titulo, subtitulo }) => (
-        <ArtigoPost key={id} id={id} titulo={titulo} subtitulo={subtitulo} classe={estilos.post} />
-
+        <ArtigoPost
+          key={id}
+          id={id}
+          titulo={titulo}
+          subtitulo={subtitulo}
+          classe={estilos.post}
+        />
       ))}
     </div>
   );
