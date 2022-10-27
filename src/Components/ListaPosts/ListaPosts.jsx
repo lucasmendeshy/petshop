@@ -3,7 +3,7 @@ import serverApi from "../../api/servidor-api";
 import LoadingDesenho from "../LoadingDesenho/LoadingDesenho.jsx";
 import estilos from "./ListaPosts.module.css";
 import ArtigoPost from "../ArtigoPost/ArtigoPost";
-const ListaPosts = () => {
+const ListaPosts = (props) => {
   /* Iniciamos o state componente com um array vazio,
   para posteriormente "preechê-lo com os dados vindos da API.
   Esta atribuição será feita com auxílio do setPosts." */
@@ -13,7 +13,8 @@ const ListaPosts = () => {
   useEffect(() => {
     async function getPosts() {
       try {
-        const resposta = await fetch(`${serverApi}/posts`);
+        /*   const resposta = await fetch(`${serverApi}/posts`); */
+        const resposta = await fetch(`${serverApi}/${props.url || "posts"}`);
         const dados = await resposta.json();
         setPosts(dados);
         setLoading(false);
@@ -22,7 +23,10 @@ const ListaPosts = () => {
       }
     }
     getPosts();
-  }, []);
+    /* É necessário indicar a URL como dependência pois ela muda toda vez em que uma categoria é clicada;
+    
+    Desta forma, o useEffect "entende" que ele deve executar novamente as suas ações (neste caso, executar novamente o fetch na API)*/
+  }, [props.url]);
   /* Sobre o useEffect
   Este hook visa permitir um maior controle sobre "efeitos colaterais" na execução do componente.
   
