@@ -28,3 +28,7 @@
 .lista_categorias a:focus {
   background-color: #2f88a8;
 }
+
+.lista_categorias a.ativo {
+  background-color: #0c0c0d;
+}

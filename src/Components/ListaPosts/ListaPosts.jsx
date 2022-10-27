@@ -3,7 +3,7 @@ import serverApi from "../../api/servidor-api";
 import LoadingDesenho from "../LoadingDesenho/LoadingDesenho.jsx";
 import estilos from "./ListaPosts.module.css";
 import ArtigoPost from "../ArtigoPost/ArtigoPost";
-const ListaPosts = (props) => {
+const ListaPosts = ({ url }) => {
   /* Iniciamos o state componente com um array vazio,
   para posteriormente "preechê-lo com os dados vindos da API.
   Esta atribuição será feita com auxílio do setPosts." */
@@ -13,8 +13,14 @@ const ListaPosts = (props) => {
   useEffect(() => {
     async function getPosts() {
       try {
-        /*   const resposta = await fetch(`${serverApi}/posts`); */
-        const resposta = await fetch(`${serverApi}/${props.url || "posts"}`);
+        // Solução 1
+        /*  const resposta = await fetch(`${serverApi}/${props.url || "posts"}`); */
+
+        // Solução 2
+        /*  const resposta = await fetch(
+          `${serverApi}/${props.url != undefined ? props.url : "posts"}`
+        ); */
+        const resposta = await fetch(`${serverApi}/${url || "posts"} `);
         const dados = await resposta.json();
         setPosts(dados);
         setLoading(false);
@@ -26,7 +32,7 @@ const ListaPosts = (props) => {
     /* É necessário indicar a URL como dependência pois ela muda toda vez em que uma categoria é clicada;
     
     Desta forma, o useEffect "entende" que ele deve executar novamente as suas ações (neste caso, executar novamente o fetch na API)*/
-  }, [props.url]);
+  }, [url]);
   /* Sobre o useEffect
   Este hook visa permitir um maior controle sobre "efeitos colaterais" na execução do componente.
   
@@ -39,21 +45,25 @@ const ListaPosts = (props) => {
   - Se passar a lista vazia (ou seja, deixar o [] vazio), useEffect executará somente no momento que o componente é renderizado a primeira vez evitando o loop infinito no callback.*/
 
   if (loading) {
-    return <LoadingDesenho />;
+    return <LoadingDesenho texto="posts" />;
   }
 
-  return (
-    <div className={estilos.lista_posts}>
-      {posts.map(({ id, titulo, subtitulo }) => (
-        <ArtigoPost
-          key={id}
-          id={id}
-          titulo={titulo}
-          subtitulo={subtitulo}
-          classe={estilos.post}
-        />
-      ))}
-    </div>
-  );
+  if (posts.length !== 0) {
+    return (
+      <div className={estilos.lista_posts}>
+        {posts.map(({ id, titulo, subtitulo }) => (
+          <ArtigoPost
+            key={id}
+            id={id}
+            titulo={titulo}
+            subtitulo={subtitulo}
+            classe={estilos.post}
+          />
+        ))}
+      </div>
+    );
+  } else {
+    return <h2>teste</h2>;
+  }
 };
 export default ListaPosts;

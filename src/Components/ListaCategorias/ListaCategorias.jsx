@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import serverApi from "../../api/servidor-api";
 import LoadingDesenho from "../LoadingDesenho/LoadingDesenho.jsx";
 import estilos from "./ListaCategorias.module.css";
@@ -29,7 +29,7 @@ const ListaCategorias = () => {
   /* console.log(categorias); -> Testando */
 
   if (loading) {
-    return <LoadingDesenho />;
+    return <LoadingDesenho texto="categorias" />;
   }
 
   return (
@@ -37,7 +37,9 @@ const ListaCategorias = () => {
       <ul>
         {categorias.map(({ id, nome }) => (
           <li key={id} id={nome}>
-            <Link to={`/categoria/${nome}`}>{nome}</Link>
+            <NavLink activeClassName={estilos.ativo} to={`/categoria/${nome}`}>
+              {nome}
+            </NavLink>
           </li>
         ))}
       </ul>
