@@ -45,7 +45,7 @@ const ListaPosts = ({ url }) => {
   - Se passar a lista vazia (ou seja, deixar o [] vazio), useEffect executará somente no momento que o componente é renderizado a primeira vez evitando o loop infinito no callback.*/
 
   if (loading) {
-    return <LoadingDesenho texto="posts" />;
+    return <LoadingDesenho texto="posts..." />;
   }
 
   if (posts.length !== 0) {
@@ -63,7 +63,7 @@ const ListaPosts = ({ url }) => {
       </div>
     );
   } else {
-    return <h2>teste</h2>;
+    return <h2 style={{ textAlign: "center" }}>Não há posts...</h2>;
   }
 };
 export default ListaPosts;

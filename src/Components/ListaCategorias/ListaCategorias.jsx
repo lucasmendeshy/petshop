@@ -29,7 +29,7 @@ const ListaCategorias = () => {
   /* console.log(categorias); -> Testando */
 
   if (loading) {
-    return <LoadingDesenho texto="categorias" />;
+    return <LoadingDesenho texto="categorias..." />;
   }
 
   return (

@@ -15,6 +15,7 @@ const Post = () => {
   let history = useHistory();
 
   useEffect(() => {
+    setLoading(true);
     async function getPost() {
       try {
         const resposta = await fetch(`${serverApi}/posts/${id}`);
