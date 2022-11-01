@@ -114,6 +114,20 @@ Se passar a lista vazia (ou seja, deixar o [] vazio), `useEffect` executará som
 
 ## CSS: uso da pseudo-classe :has()
 
+Referências:
+
+`https://edrodrigues.com.br/blog/where-is-has-novos-seletores-css-que-facilitam-sua-vida/`
+
+`https://www.youtube.com/watch?v=Ia_4XdisCGQ`
+
 `https://css-tricks.com/the-css-has-selector/`
 
 `https://webkit.org/blog/13096/css-has-pseudo-class/`
+
+## MUI: Biblioteca de componentes para React
+
+Site oficial: `https://mui.com/pt/material-ui/getting-started/installation/`
+
+Instalação: npm install @mui/material @emotion/react @emotion/styled
+
+Dica CSS: `https://code.tutsplus.com/pt/tutorials/the-30-css-selectors-you-must-memorize--net-16048`
