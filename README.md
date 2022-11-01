@@ -1,6 +1,6 @@
 # petshop
 
-Projeto iniciado através do cra [`CRA - Create-react-app`] (https://github.com/facebook/create-react-app)
+Projeto iniciado através do cra [`CRA - Create-react-app`] (`https://github.com/facebook/create-react-app`)
 
 obs.: este projeto poderia ser criado também a partir do Vite.
 
@@ -94,7 +94,7 @@ Exemplos:
 
 Introduzidos na versão React 16.8, são funções que permitem manipular estados e outros recursos do React sem a necessidade de programar Classes. Hooks são funções que se conectam aos estados do React e aos recursos do ciclo de vida dos componentes da função. Não funcionam dentro de classes.
 
-Mais informações: https://www.javatpoint.com/react-hooks
+Mais informações: `https://www.javatpoint.com/react-hooks`
 
 ## useState
 
@@ -131,3 +131,31 @@ Site oficial: `https://mui.com/pt/material-ui/getting-started/installation/`
 Instalação: npm install @mui/material @emotion/react @emotion/styled
 
 Dica CSS: `https://code.tutsplus.com/pt/tutorials/the-30-css-selectors-you-must-memorize--net-16048`
+
+## Para usar a API via rede local
+
+### package.json
+
+Altere a linha: `"api": "json-server --watch db.json --port 2112"` Para: `"api": "json-server --host NUMERO.IP.DA.SUA.MAQUINA db.json --port 2112"`
+
+Exemplo: `"api": "json-server --host 10.20.45.44 db.json --port 2112"`
+
+### servidor.api.js
+
+Duplique e comente a linha da constante atual (serverApi).
+
+Na versão descomentada, substitua o `localhost` pelo `número.ip.da.sua.maquina.`
+
+Pare a API no terminal e execute novamente `npm run api.`
+
+## Tornando o app React em uma aplicação instalável o dispositivo (PWA)
+
+### Configurar o arquivo manifest.json
+
+Um **arquivo de manifesto** é um arquivo JSON contendo informações sobre seu aplicativo web e, quando combinado com um **Service Worker**, permite a instalação do aplicativo em qualquer dispsitivo compatível.
+
+### Configurar/Programar um Service worker JavaScript
+
+Um **Service Worker** (Trabalhador/Manipulador de Serviços) é um script que o navegador executa em segundo plano separado da aplicação web, possibilitando recursos que não precisam de uma página ou interações com o usuário.
+
+O service Worker está no centro de muitos recursos das chamadas **PWA (Progressive web Application)**, tais como: cache offline, sincronização em segundo plano, notificações, execução independente do navegador mobile etc.
