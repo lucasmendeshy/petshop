@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api": "json-server --host 10.20.45.39 db.json --port 5000"
+    "api": "json-server --host 192.168.1.12 db.json --port 5000"
   },
   "eslintConfig": {
     "extends": [

@@ -148,7 +148,22 @@ Na versão descomentada, substitua o `localhost` pelo `número.ip.da.sua.maquina
 
 Pare a API no terminal e execute novamente `npm run api.`
 
+### Testando o app via celular
+
+1.Abra o Chrome (ou Safari no iOS) em seu celular
+2.Digite o número IP da sua máquina seguido de : e o número da porta usada pelo app React
+
 ## Tornando o app React em uma aplicação instalável o dispositivo (PWA)
+
+Referências sobre PWA
+Aplicações Web Progressivas
+`https://web.dev/progressive-web-apps/`
+
+Web App Manifest File - Torne seu aplicativo da Web instalável
+`https://medium.com/@marcelohg/web-app-manifest-file-torne-seu-aplicativo-da-web-instal%C3%A1ve-4bf5d1dcbe7d`
+
+PWA Tips and tricks
+`https://robferguson.org/blog/2018/09/14/pwa-tips-and-tricks/`
 
 ### Configurar o arquivo manifest.json
 
@@ -159,3 +174,15 @@ Um **arquivo de manifesto** é um arquivo JSON contendo informações sobre seu 
 Um **Service Worker** (Trabalhador/Manipulador de Serviços) é um script que o navegador executa em segundo plano separado da aplicação web, possibilitando recursos que não precisam de uma página ou interações com o usuário.
 
 O service Worker está no centro de muitos recursos das chamadas **PWA (Progressive web Application)**, tais como: cache offline, sincronização em segundo plano, notificações, execução independente do navegador mobile etc.
+
+## Passo a passo para transformação do app PetShop em PWA
+
+1.Configuração do manifest.json
+2.Criação dos arquivos sw-petshop.js e sw-registro.js
+3.Adicionar ao final da index.html os scripts sw-petshop.js (1º) e sw-registro.js (2º)
+4.Voltar no Chrome do computador, com o app ainda aberto, notar na barra de endereços o novo ícone de instalação
+5.Clique nele e instale seu App.
+6.Feche as janelas do navegador
+7.Procure em sua área de trabalho (ou menu Iniciar) o ícone do app PetShop
+8.No Android acesse o menu do Chrome e procure por Adicionar à tela inicial
+9.No iOS acesse o menu do Safaria e procure por Adicionar à tela de início
