@@ -3,7 +3,7 @@ import serverApi from "../../api/servidor-api";
 import LoadingDesenho from "../LoadingDesenho/LoadingDesenho.jsx";
 import estilos from "./ListaPosts.module.css";
 import ArtigoPost from "../ArtigoPost/ArtigoPost";
-const ListaPosts = ({ url }) => {
+const ListaPosts = ({ categoria }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,6 +25,17 @@ const ListaPosts = ({ url }) => {
             categoria: dados[post].categoria,
           };
           listaDePosts.push(objetoPost);
+
+          /* se categoria for escolhida/clicada */
+          if (categoria) {
+            /* Então vamos fazer uma lista de posts com filtro de categoria */
+
+            /* A cada vez que o loop for é executado, pegamos a categoria de cada post e comparamos com a categoria escolhida pelo usuário; */
+            listaDePosts = listaDePosts.filter(
+              /* Se esta comparação for verdadeira, guardamos o post na listaDePosts. Caso contrário, é descartado pelo filtro */
+              (cadaPost) => cadaPost.categoria === categoria
+            );
+          }
         }
         setPosts(listaDePosts);
         setLoading(false);
@@ -33,7 +44,7 @@ const ListaPosts = ({ url }) => {
       }
     }
     getPosts();
-  }, [url]);
+  }, [categoria]);
 
   if (loading) {
     return <LoadingDesenho texto="posts..." />;
