@@ -5,26 +5,25 @@ import Caixa from "../../Components/Caixa/Caixa.jsx";
 import LoadingDesenho from "../../Components/LoadingDesenho/LoadingDesenho.jsx";
 import estilos from "./Post.module.css";
 const Post = () => {
-  /* useParams() -> hook do react-router que permite acesso/manipulação de parâmetro vindos da URL. */
   const { id } = useParams();
   console.log(id);
   const [loading, setLoading] = useState(true);
   const [post1, setPost1] = useState([]);
 
-  /* Hook do react-router que permite utilizar recuros de navegação no histórico do navegador */
   let history = useHistory();
 
   useEffect(() => {
     setLoading(true);
     async function getPost() {
       try {
-        const resposta = await fetch(`${serverApi}/posts/${id}`);
+        /* É necessário adicionar ".json" para que o recurso/documento de dados do Realtime Database seja lido como um objeto. */
+        const resposta = await fetch(`${serverApi}/posts/${id}.json`);
         const dados = await resposta.json();
         setPost1(dados);
         setLoading(false);
-        /* Verificando se o resultando do objeto de dados possui o tamanho de zero (ou seja, se ele está vazio, sem dados nenhum) */
-        if (Object.keys(dados).length === 0) {
-          /* Estamos, forçando o redirecionamento numa de primeiro nível que não existe. Com isso, na prática, o router traz a página404. */
+
+        /*  Se não existir dados (ou seja, post inexistente) vá para a rota 404 */
+        if (!dados) {
           history.push("/404");
         }
         console.log(dados);
@@ -33,7 +32,7 @@ const Post = () => {
       }
     }
     getPost();
-  }, [id]); /* id é uma dependência para useEffect */
+  }, [id, history]);
 
   if (loading) return <LoadingDesenho />;
 
